@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Nav :class="{'d-none': scrollPosition > 400}" ></Nav>
+  <Main id="welcome"></Main>
+  <div class="container">
+    <FilterByName />
+    <CharactersList />
+  </div>
+  <Footer></Footer>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Main from './components/Main.vue'
+import Nav from './components/Nav.vue'
+import Footer from './components/Footer.vue'
+import FilterByName from './components/FilterByName.vue'
+import CharactersList from '../src/components/CharactersList.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CharactersList,
+    FilterByName,
+    Main,
+    Nav,
+    Footer
+  },
+  data() {
+    return {
+      scrollPosition: null
+    }
+  },
+  methods: {
+    updateScroll() {
+      this.scrollPosition = window.scrollY
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll)
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
