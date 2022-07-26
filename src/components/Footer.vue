@@ -26,7 +26,8 @@
     <div class="content">
         <div class="col-auto" id="contact">
             <p class="pt-2 text-dark">
-                <strong>Pueden encontrar más proyectos por mis redes</strong>
+                <strong>Be sure to follow me on social media</strong><br>
+                <strong> and visit my website to see more projects</strong>
             </p>
         </div>
         <div>
